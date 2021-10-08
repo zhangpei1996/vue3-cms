@@ -1,22 +1,33 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
-    "jsx": "preserve",
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true,
+    "target": "esnext", // 目标代码 esnext(表示不转化) 因为项目创建时选择用 Babel 转化，如果使用 ts 转化一般设置为 es5
+    "module": "esnext", // 目标代码需要使用的模块化方案(commonjs  require/module.exports/es module import/export) umd(表示支持多种模块化方式)
+    "strict": true, // 严格模式
+    "jsx": "preserve", // 对 jsx 进行什么样的处理 preserve(保留，不转化)
+    "importHelpers": true, // 辅助的导入功能
+    "moduleResolution": "node", // 按照 node 的方式去解析模块
+    "skipLibCheck": true, // 跳过对一些库的类型检测
+    // 设置 export default 与 module.exports = {} 可以混合使用
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "baseUrl": ".",
-    "types": ["webpack-env"],
+    "sourceMap": true, // 要不要生成映射文件
+    "baseUrl": "./", // 文件路径在解析时基本的 url
+    "types": ["webpack-env"], // 解析具体要使用的类型，不传就默认为 target
     "paths": {
+      // 路径解析(类似于 webpack 中的 alias)
       "@/*": ["src/*"]
     },
+    // 可以指定在项目中可以使用哪些库的类型
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+  // 配置哪些代码需要经过编译解析
+  "include": [
+    "src/**/*.vue",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  // 配置不需要编译解析的文件夹
   "exclude": ["node_modules"]
 }
