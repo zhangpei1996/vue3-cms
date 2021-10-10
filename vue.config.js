@@ -15,6 +15,11 @@ module.exports = {
   //     views: '@/views'
   //   }
   // },
+  configureWebpack: {
+    performance: {
+      hints: false
+    }
+  },
   chainWebpack: (config) => {
     config.resolve.alias
       .set('@', path.resolve(__dirname, 'src'))

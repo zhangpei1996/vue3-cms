@@ -9,7 +9,7 @@ module.exports = {
     '@vue/typescript/recommended',
     '@vue/prettier',
     '@vue/prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
+    'plugin:prettier/recommended'
   ],
   parserOptions: {
     ecmaVersion: 2020
@@ -22,6 +22,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'no-unused-labels': 'off',
     'vue/no-setup-props-destructure': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off'
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-unused-vars': 'off'
   }
 };
